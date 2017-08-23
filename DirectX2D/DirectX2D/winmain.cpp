@@ -6,6 +6,13 @@
 #include <crtdbg.h>             // for detecting memory leaks
 #include "graphics.h"
 
+#pragma comment(lib, "d3d9.lib")
+#pragma comment(lib, "d3dx9d.lib")
+#pragma comment(lib, "dxerr.lib")
+#pragma comment(lib, "dxguid.lib")
+#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "user32.lib")
+
 // Function prototypes
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int);
 bool CreateMainWindow(HWND &, HINSTANCE, int);
