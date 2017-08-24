@@ -1,0 +1,9 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  spacewar.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  Generating Code...
+  Planet.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Planet.exe
+  Planet.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Planet.pdb (Partial PDB)

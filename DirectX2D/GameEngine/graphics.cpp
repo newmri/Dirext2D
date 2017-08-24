@@ -7,6 +7,7 @@ Graphics::Graphics()
 {
 	direct3d = NULL;
 	device3d = NULL;
+	sprite = NULL;
 	fullscreen = false;
 	width = GAME_WIDTH;    // width & height are replaced in initialize()
 	height = GAME_HEIGHT;
@@ -71,6 +72,11 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
 
 	if (FAILED(result))
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Error creating Direct3D device"));
+
+	result = D3DXCreateSprite(device3d, &sprite);
+		if (FAILED(result))
+			throw (GameError(gameErrorNS::FATAL_ERROR,
+				"Error creating Direct3D sprite"));
 
 }
 

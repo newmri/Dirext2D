@@ -15,7 +15,7 @@ class Graphics;
 // DirectX pointer types
 #define LP_3DDEVICE LPDIRECT3DDEVICE9
 #define LP_3D       LPDIRECT3D9
-
+#define LP_SPRITE	LPD3DXSPRITE
 // Color defines
 #define COLOR_ARGB DWORD
 #define SETCOLOR_ARGB(a,r,g,b) \
@@ -27,6 +27,7 @@ private:
 	// DirectX pointers and stuff
 	LP_3D       direct3d;
 	LP_3DDEVICE device3d;
+	LP_SPRITE	sprite;
 	D3DPRESENT_PARAMETERS d3dpp;
 	D3DDISPLAYMODE pMode;
 
