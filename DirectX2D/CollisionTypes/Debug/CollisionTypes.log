@@ -1,0 +1,12 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  ship.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  collisionTypes.cpp
+  Generating Code...
+  CollisionTypes.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\CollisionTypes.exe
+  CollisionTypes.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\CollisionTypes.pdb (Partial PDB)

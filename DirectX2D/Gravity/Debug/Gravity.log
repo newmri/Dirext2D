@@ -1,0 +1,13 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  paddle.cpp
+  input.cpp
+  image.cpp
+  gravity.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  ball.cpp
+  Generating Code...
+  Gravity.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Gravity.exe
+  Gravity.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Gravity.pdb (Partial PDB)

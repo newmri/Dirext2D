@@ -1,0 +1,12 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  spacewar.cpp
+  ship.cpp
+  planet.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  Generating Code...
+  Orbit.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Orbit.exe
+  Orbit.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Orbit.pdb (Partial PDB)

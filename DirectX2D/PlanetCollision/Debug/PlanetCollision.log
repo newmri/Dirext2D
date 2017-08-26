@@ -1,0 +1,13 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  spacewar.cpp
+  ship.cpp
+  planet.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  Generating Code...
+  PlanetCollision.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\PlanetCollision.exe
+  PlanetCollision.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\PlanetCollision.pdb (Partial PDB)

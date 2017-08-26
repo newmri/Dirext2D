@@ -1,0 +1,13 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  spacewar.cpp
+  ship.cpp
+  planet.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  Generating Code...
+  Bounce.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Bounce.exe
+  Bounce.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Bounce.pdb (Partial PDB)
