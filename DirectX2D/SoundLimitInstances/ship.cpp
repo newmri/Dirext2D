@@ -1,0 +1,37 @@
+// Programming 2D Games
+// Copyright (c) 2011 by: 
+// Charles Kelly
+// Chapter 7 ship.cpp v1.0
+
+#include "ship.h"
+
+//=============================================================================
+// default constructor
+//=============================================================================
+Ship::Ship() : Entity()
+{
+    spriteData.width = shipNS::WIDTH;           // size of Ship1
+    spriteData.height = shipNS::HEIGHT;
+    spriteData.x = shipNS::X;                   // location on screen
+    spriteData.y = shipNS::Y;
+    spriteData.rect.bottom = shipNS::HEIGHT;    // rectangle to select parts of an image
+    spriteData.rect.right = shipNS::WIDTH;
+    velocity.x = 0;                             // velocity X
+    velocity.y = 0;                             // velocity Y
+    frameDelay = shipNS::SHIP_ANIMATION_DELAY;
+    startFrame = shipNS::SHIP_START_FRAME;      // first frame of ship animation
+    endFrame     = shipNS::SHIP_END_FRAME;      // last frame of ship animation
+    currentFrame = startFrame;
+    radius = shipNS::WIDTH/2.0;
+    collisionType = entityNS::CIRCLE;
+}
+
+//=============================================================================
+// update
+// typically called once per frame
+// frameTime is used to regulate the speed of movement and animation
+//=============================================================================
+void Ship::update(float frameTime)
+{
+    Entity::update(frameTime);
+}

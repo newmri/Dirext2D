@@ -1,0 +1,14 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  spacewar.cpp
+  ship.cpp
+  planet.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  audio.cpp
+  Generating Code...
+  SoundExample.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SoundExample.exe
+  SoundExample.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SoundExample.pdb (Partial PDB)
