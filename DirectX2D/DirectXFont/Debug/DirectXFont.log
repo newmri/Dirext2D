@@ -1,0 +1,12 @@
+﻿  winmain.cpp
+  threeCsDX.cpp
+  textDX.cpp
+  input.cpp
+  graphics.cpp
+  game.cpp
+  dxinput.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  audio.cpp
+  Generating Code...
+  DirectXFont.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\DirectXFont.exe
+  DirectXFont.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\DirectXFont.pdb (Partial PDB)

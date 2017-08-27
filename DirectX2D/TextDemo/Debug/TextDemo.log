@@ -1,0 +1,14 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  textdemo.cpp
+  text.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  TextDemo.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TextDemo.exe
+  TextDemo.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TextDemo.pdb (Partial PDB)
