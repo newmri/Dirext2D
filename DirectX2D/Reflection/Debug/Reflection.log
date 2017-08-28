@@ -1,0 +1,15 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  reflection.cpp
+  plane.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  Reflection.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Reflection.exe
+  Reflection.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\Reflection.pdb (Partial PDB)

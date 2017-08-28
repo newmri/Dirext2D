@@ -1,0 +1,15 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  spacewar.cpp
+  ship.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  ScrollingBitmap.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\ScrollingBitmap.exe
+  ScrollingBitmap.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\ScrollingBitmap.pdb (Partial PDB)

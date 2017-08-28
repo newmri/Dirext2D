@@ -1,0 +1,18 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  dxinput.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  dashboardDemo.cpp
+  dashboard.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  DashBoard.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\DashBoard.exe
+  DashBoard.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\DashBoard.pdb (Partial PDB)
