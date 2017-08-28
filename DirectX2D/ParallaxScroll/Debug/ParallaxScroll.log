@@ -1,0 +1,15 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  spacewar.cpp
+  ship.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  ParallaxScroll.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\ParallaxScroll.exe
+  ParallaxScroll.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\ParallaxScroll.pdb (Partial PDB)
