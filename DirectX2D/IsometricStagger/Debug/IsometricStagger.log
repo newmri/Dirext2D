@@ -1,0 +1,15 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  console.cpp
+  checkers.cpp
+  audio.cpp
+  Generating Code...
+  IsometricStagger.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\IsometricStagger.exe
+  IsometricStagger.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\IsometricStagger.pdb (Partial PDB)

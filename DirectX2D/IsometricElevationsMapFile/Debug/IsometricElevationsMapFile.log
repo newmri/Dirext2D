@@ -1,0 +1,15 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  elevations.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  IsometricElevationsMapFile.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\IsometricElevationsMapFile.exe
+  IsometricElevationsMapFile.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\IsometricElevationsMapFile.pdb (Partial PDB)

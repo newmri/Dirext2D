@@ -1,0 +1,18 @@
+﻿  winmain.cpp
+  tileCollision.cpp
+  textureManager.cpp
+  textDX.cpp
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  console.cpp
+  boat.cpp
+s:\kpu\4-summer\dirext2d\directx2d\tilecollision\boat.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
+  audio.cpp
+  Generating Code...
+  TileCollision.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TileCollision.exe
+  TileCollision.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TileCollision.pdb (Partial PDB)
