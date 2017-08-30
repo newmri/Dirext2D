@@ -1,0 +1,21 @@
+﻿  winmain.cpp
+  torpedo.cpp
+  textureManager.cpp
+  textDX.cpp
+  spacePirates.cpp
+  ship.cpp
+  planet.cpp
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  dashboard.cpp
+  cow.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  SpacePirates.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SpacePirates.exe
+  SpacePirates.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SpacePirates.pdb (Partial PDB)
