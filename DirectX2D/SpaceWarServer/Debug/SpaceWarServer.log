@@ -1,0 +1,33 @@
+﻿  winmain.cpp
+  torpedo.cpp
+  textureManager.cpp
+  textDX.cpp
+  spacewar.cpp
+  ship.cpp
+  planet.cpp
+  net.cpp
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(170): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(187): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(192): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(221): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(322): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+s:\kpu\4-summer\dirext2d\directx2d\spacewarserver\net.cpp(392): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  dashboard.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  SpaceWarServer.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SpaceWarServer.exe
+  SpaceWarServer.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\SpaceWarServer.pdb (Partial PDB)

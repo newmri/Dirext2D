@@ -61,6 +61,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IsometricSelection", "Isome
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpacePirates", "SpacePirates\SpacePirates.vcxproj", "{8F5D4412-009A-452A-A105-1AE3134D241B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceWarClient", "SpaceWarClient\SpaceWarClient.vcxproj", "{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceWarServer", "SpaceWarServer\SpaceWarServer.vcxproj", "{42A56283-221F-443E-845A-0DDB81818F13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -301,6 +305,22 @@ Global
 		{8F5D4412-009A-452A-A105-1AE3134D241B}.Release|x64.Build.0 = Release|x64
 		{8F5D4412-009A-452A-A105-1AE3134D241B}.Release|x86.ActiveCfg = Release|Win32
 		{8F5D4412-009A-452A-A105-1AE3134D241B}.Release|x86.Build.0 = Release|Win32
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Debug|x64.ActiveCfg = Debug|x64
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Debug|x64.Build.0 = Debug|x64
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Debug|x86.ActiveCfg = Debug|Win32
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Debug|x86.Build.0 = Debug|Win32
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Release|x64.ActiveCfg = Release|x64
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Release|x64.Build.0 = Release|x64
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Release|x86.ActiveCfg = Release|Win32
+		{083911BA-0E8E-4CA5-9A7D-72ABCC794E86}.Release|x86.Build.0 = Release|Win32
+		{42A56283-221F-443E-845A-0DDB81818F13}.Debug|x64.ActiveCfg = Debug|x64
+		{42A56283-221F-443E-845A-0DDB81818F13}.Debug|x64.Build.0 = Debug|x64
+		{42A56283-221F-443E-845A-0DDB81818F13}.Debug|x86.ActiveCfg = Debug|Win32
+		{42A56283-221F-443E-845A-0DDB81818F13}.Debug|x86.Build.0 = Debug|Win32
+		{42A56283-221F-443E-845A-0DDB81818F13}.Release|x64.ActiveCfg = Release|x64
+		{42A56283-221F-443E-845A-0DDB81818F13}.Release|x64.Build.0 = Release|x64
+		{42A56283-221F-443E-845A-0DDB81818F13}.Release|x86.ActiveCfg = Release|Win32
+		{42A56283-221F-443E-845A-0DDB81818F13}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
