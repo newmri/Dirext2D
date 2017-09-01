@@ -1,0 +1,371 @@
+Change log for Programming 2D Games game engine.
+
+[Version 1.1]
+
+"entity.h" added the following functions:
+  // Set collision type (NONE, CIRCLE, BOX, ROTATED_BOX)
+  virtual void setCollisionType(entityNS::COLLISION_TYPE ctype)
+  {collisionType = ctype;}
+
+  // Set RECT structure used for BOX and ROTATED_BOX collision detection.
+  void setEdge(RECT e) {edge = e;}
+
+"graphics.cpp" changed for loop from i<modes-1 to i<modes
+  bool Graphics::isAdapterCompatible()
+  {
+      UINT modes = direct3d->GetAdapterModeCount(D3DADAPTER_DEFAULT, 
+                                              d3dpp.BackBufferFormat);
+      for(UINT i=0; i<modes; i++)
+
+[Version 1.2]
+       
+"entity.cpp" the collision vector returned by the collidesWith function was pointing in the wrong direction
+if the current entity was a circle and the other entity was using Box or RotatedBox. The corrected code is:
+    if (collisionType == entityNS::CIRCLE)  // if this entity uses CIRCLE collision
+    {
+        // Check for collision from other box with our circle
+        bool collide = ent.collideRotatedBoxCircle(*this, collisionVector); 
+        // Put the collision vector in the proper direction
+        collisionVector *= -1;              // reverse collision vector
+        return collide;
+    }
+
+[Version 1.3]
+
+Class declarations of the current class were added to each header file. This prevents syntax errors when including other header files that contain includes of the current header file.
+
+"input.h" the game controller functions were testing for (n > MAX_CONTROLLERS) which was incorrect. The correct test is (n > MAX_CONTROLLERS-1)
+
+[Version 1.4, 1.5]
+
+Comment and formatting changes.
+
+[Version 1.6]
+
+"game.cpp" added mouse wheel message handler.
+    case WM_MOUSEWHEEL:                     // mouse wheel move
+        input->mouseWheelIn(wParam);
+        return 0;
+
+"input.h" getMouseRawX and getMouseRawY modified to reset the mouse position to 0 after each read. The mouse position returned is relative to the previous position. Added getMouseWheel function. Returns the mouse wheel movement relative to previous position.
+
+    // Return raw mouse X movement relative to previous position.
+    // Left is <0, Right is >0
+    // Compatible with high-definition mouse.
+    int  getMouseRawX()
+    { 
+        int rawX = mouseRawX;
+        mouseRawX = 0;
+        return rawX; 
+    }
+
+    // Return raw mouse Y movement relative to previous position.
+    // Up is <0, Down is >0
+    // Compatible with high-definition mouse.
+    int  getMouseRawY()
+    { 
+        int rawY = mouseRawY;
+        mouseRawY = 0;
+        return rawY; 
+    }
+       
+    // Return mouse wheel movement relative to previous position.
+    // Forward is >0, Backward is <0, movement is in multiples of WHEEL_DATA (120).
+    int  getMouseWheel()
+    { 
+        int wheel = mouseWheel;
+        mouseWheel = 0;
+        return wheel; 
+    } 
+
+[Version 1.7]
+
+"constants.h" SAFE_DELETE, SAFE_RELEASE, SAFE_DELETE_ARRAY, SAFE_ON_LOST_DEVICE, SAFE_ON_RESET_DEVICE macros replaced with template functions.
+
+    //=============================================================================
+    // Function templates for safely dealing with pointer referenced items.
+    // The functions defined by these templates may be called using a normal
+    // function call syntax. The compiler will create a function that replaces T
+    // with the type of the calling parameter.
+    //=============================================================================
+    // Safely release pointer referenced item
+    template <typename T>
+    inline void safeRelease(T& ptr)
+    {
+        if (ptr)
+        { 
+            ptr->Release(); 
+            ptr = NULL;
+        }
+    }
+    #define SAFE_RELEASE safeRelease            // for backward compatiblility
+
+    // Safely delete pointer referenced item
+    template <typename T>
+    inline void safeDelete(T& ptr)
+    {
+        if (ptr)
+        { 
+            delete ptr; 
+            ptr = NULL;
+        }
+    }
+    #define SAFE_DELETE safeDelete              // for backward compatiblility
+       
+    // Safely delete pointer referenced array
+    template <typename T>
+    inline void safeDeleteArray(T& ptr)
+    {
+        if (ptr)
+        { 
+            delete[] ptr; 
+            ptr = NULL;
+        }
+    }
+    #define SAFE_DELETE_ARRAY safeDeleteArray   // for backward compatiblility
+       
+    // Safely call onLostDevice
+    template <typename T>
+    inline void safeOnLostDevice(T& ptr)
+    {
+        if (ptr)
+            ptr->onLostDevice(); 
+    }
+    #define SAFE_ON_LOST_DEVICE safeOnLostDevice    // for backward compatiblility
+       
+    // Safely call onResetDevice
+    template <typename T>
+    inline void safeOnResetDevice(T& ptr)
+    {
+        if (ptr)
+            ptr->onResetDevice(); 
+    }
+    #define SAFE_ON_RESET_DEVICE safeOnResetDevice  // for backward compatiblility
+
+"graphics.h" TRANSCOLOR changed from D3DCOLOR_ARGB(0,255,0,255) to MAGENTA which is defined as D3DCOLOR_ARGB(255,255,0,255). This magenta color matches the color used by Microsoft Paint. TRANSCOLOR was moved to the graphicsNS namespace. 
+
+[Version 1.8]
+
+"input.h" Deadzone added to gamepad trigger and thumbstick input. The Undead flavor of
+each function returns the raw gamepad data.
+
+    // Return value of controller n Left Trigger (0 through 255).
+    // Trigger movement less than GAMEPAD_TRIGGER_DEADZONE returns 0.
+    // Return value is scaled to 0 through 255
+    BYTE getGamepadLeftTrigger(UINT n);
+
+    // Return value of controller n Left Trigger (0 through 255).
+    // Deadzone is not applied.
+    BYTE getGamepadLeftTriggerUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)
+            n=MAX_CONTROLLERS-1;
+        return controllers[n].state.Gamepad.bLeftTrigger;
+    }
+
+    // Return value of controller n Right Trigger (0 through 255).
+    // Trigger movement less than GAMEPAD_TRIGGER_DEADZONE returns 0.
+    // Return value is scaled to 0 through 255
+    BYTE getGamepadRightTrigger(UINT n);
+
+    // Return value of controller n Right Trigger (0 through 255).
+    // Deadzone is not applied.
+    BYTE getGamepadRightTriggerUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)
+            n=MAX_CONTROLLERS-1;
+        return controllers[n].state.Gamepad.bRightTrigger;
+    }
+
+    // Return value of controller n Left Thumbstick X (-32767 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    SHORT getGamepadThumbLX(UINT n);
+
+    // Return value of controller n Left Thumbstick X (-32767 through 32767).
+    // Deadzone is not applied.
+    SHORT getGamepadThumbLXUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)
+            n=MAX_CONTROLLERS-1;
+        return controllers[n].state.Gamepad.sThumbLX;
+    }
+
+    // Return value of controller n Left Thumbstick Y (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    SHORT getGamepadThumbLY(UINT n);
+
+    // Return value of controller n Left Thumbstick Y (-32768 through 32767).
+    // Deadzone is not applied.
+    SHORT getGamepadThumbLYUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)
+            n=MAX_CONTROLLERS-1;
+        return controllers[n].state.Gamepad.sThumbLY;
+    }
+
+    // Return value of controller n Right Thumbstick X (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    SHORT getGamepadThumbRX(UINT n);
+
+    // Return value of controller n Right Thumbstick X (-32768 through 32767).
+    // Deadzone is not applied.
+    SHORT getGamepadThumbRXUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)   // if invalid controller number
+            n=MAX_CONTROLLERS-1;    // force valid
+        return controllers[n].state.Gamepad.sThumbRX;
+    }
+
+    // Return value of controller n Right Thumbstick Y (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    SHORT getGamepadThumbRY(UINT n);
+
+    // Return value of controller n Right Thumbstick Y (-32768 through 32767).
+    // Deadzone is not applied.
+    SHORT getGamepadThumbRYUndead(UINT n) 
+    {
+        if(n > MAX_CONTROLLERS-1)
+            n=MAX_CONTROLLERS-1;
+        return controllers[n].state.Gamepad.sThumbRY;
+    }
+
+
+"input.cpp" 
+
+    //=============================================================================
+    // Return value of controller n Left Trigger (0 through 255).
+    // Trigger movement less than GAMEPAD_TRIGGER_DEADZONE returns 0.
+    // Return value is scaled to 0 through 255
+    //=============================================================================
+    BYTE Input::getGamepadLeftTrigger(UINT n) 
+    {
+        BYTE value = getGamepadLeftTriggerUndead(n);
+        if(value > GAMEPAD_TRIGGER_DEADZONE)    // if > dead zone
+            //adjust magnitude relative to the end of the dead zone
+            value = (value-GAMEPAD_TRIGGER_DEADZONE)*255/
+            (255-GAMEPAD_TRIGGER_DEADZONE);
+        else                                    // else, < dead zone
+            value = 0;
+        return value;
+    }
+
+    //=============================================================================
+    // Return value of controller n Right Trigger (0 through 255).
+    // Trigger movement less than GAMEPAD_TRIGGER_DEADZONE returns 0.
+    // Return value is scaled to 0 through 255
+    //=============================================================================
+    BYTE Input::getGamepadRightTrigger(UINT n) 
+    {
+        BYTE value = getGamepadRightTriggerUndead(n);
+        if(value > GAMEPAD_TRIGGER_DEADZONE)    // if > dead zone
+            //adjust magnitude relative to the end of the dead zone
+            value = (value-GAMEPAD_TRIGGER_DEADZONE)*255/
+            (255-GAMEPAD_TRIGGER_DEADZONE);
+        else                                    // else, < dead zone
+            value = 0;
+        return value;
+    }
+
+    //=============================================================================
+    // Return value of controller n Left Thumbstick X (-32767 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    //=============================================================================
+    SHORT Input::getGamepadThumbLX(UINT n) 
+    {
+        int x = getGamepadThumbLXUndead(n);
+        if(x > GAMEPAD_THUMBSTICK_DEADZONE) // if +x outside dead zone
+            //adjust x relative to the deadzone and scale to 0 through 32767
+            x = (x-GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else if(x < -GAMEPAD_THUMBSTICK_DEADZONE)   // if -x outside dead zone
+            //adjust y relative to the deadzone and scale to 0 through -32767
+            x = (x+GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else        // else, x inside dead zone
+            x = 0;  // return 0
+        return static_cast<SHORT>(x);
+    }
+
+    //=============================================================================
+    // Return value of controller n Left Thumbstick Y (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    //=============================================================================
+    SHORT Input::getGamepadThumbLY(UINT n) 
+    {
+        int y = getGamepadThumbLYUndead(n);
+        if(y > GAMEPAD_THUMBSTICK_DEADZONE) // if +y outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            y = (y-GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else if(y < -GAMEPAD_THUMBSTICK_DEADZONE)   // if -y outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            y = (y+GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else        // else, y inside dead zone
+            y = 0;  // return 0
+        return static_cast<SHORT>(y);
+    }
+
+    //=============================================================================
+    // Return value of controller n Right Thumbstick X (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    //=============================================================================
+    SHORT Input::getGamepadThumbRX(UINT n) 
+    {
+        int x = getGamepadThumbRXUndead(n);
+        if(x > GAMEPAD_THUMBSTICK_DEADZONE) // if +x outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            x = (x-GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else if(x < -GAMEPAD_THUMBSTICK_DEADZONE)   // if -x outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            x = (x+GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else        // else, x inside dead zone
+            x = 0;  // return 0
+        return static_cast<SHORT>(x);
+    }
+
+    //=============================================================================
+    // Return value of controller n Right Thumbstick Y (-32768 through 32767).
+    // Stick movement less than GAMEPAD_THUMBSTICK_DEADZONE returns 0.
+    // Return value is scaled to -32768 through 32767
+    //=============================================================================
+    SHORT Input::getGamepadThumbRY(UINT n) 
+    {
+        int y = getGamepadThumbRYUndead(n);
+        if(y > GAMEPAD_THUMBSTICK_DEADZONE) // if +y outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            y = (y-GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else if(y < -GAMEPAD_THUMBSTICK_DEADZONE)   // if -y outside dead zone
+            //adjust magnitude relative to the end of the dead zone
+            y = (y+GAMEPAD_THUMBSTICK_DEADZONE)*32767/
+            (32767-GAMEPAD_THUMBSTICK_DEADZONE);
+        else        // else, y inside dead zone
+            y = 0;  // return 0
+        return static_cast<SHORT>(y);
+    }
+
+[Version 1.9]
+
+"input.h and input.cpp" Added thumbstickDeadzone and triggerDeadzone variables. The variables are initialized with the constants GAMEPAD_THUMBSTICK_DEADZONE and GAMEPAD_TRIGGER_DEADZONE respectively. Added functions to set and get the variables: 
+    // Set thumbstick deadzone
+    void setThumbstickDeadzone(short dz) { thumbstickDeadzone = abs(dz); }
+
+    // Set trigger deadzone
+    void setTriggerDeadzone(BYTE dz) { triggerDeadzone = dz; }
+
+    // Get thumbstick deadzone
+    short getThumbstickDeadzone() { return thumbstickDeadzone; }
+
+    // Get trigger deadzone
+    BYTE getTriggerDeadzone() { return static_cast<BYTE>(triggerDeadzone); }
+Using variables permits the game programmer to change the deadzone values.

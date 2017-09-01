@@ -1,0 +1,18 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  messageDialog.cpp
+s:\kpu\4-summer\dirext2d\directx2d\textruefilter\messagedialog.cpp(25): warning C4307: '+': integral constant overflow
+s:\kpu\4-summer\dirext2d\directx2d\textruefilter\messagedialog.cpp(27): warning C4307: '+': integral constant overflow
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  game.cpp
+  entity.cpp
+  demo.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  TextrueFilter.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TextrueFilter.exe
+  TextrueFilter.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\TextrueFilter.pdb (Partial PDB)

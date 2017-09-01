@@ -1,0 +1,31 @@
+﻿  winmain.cpp
+  textureManager.cpp
+  textDX.cpp
+  text.cpp
+  net.cpp
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(171): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(188): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(193): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(220): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note: see declaration of 'inet_addr'
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(317): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+s:\kpu\4-summer\dirext2d\directx2d\gamepad\net.cpp(385): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note: see declaration of 'inet_ntoa'
+  messageDialog.cpp
+  inputDialog.cpp
+  input.cpp
+  image.cpp
+  graphics.cpp
+  gamepadDemo.cpp
+  game.cpp
+  entity.cpp
+  dashboard.cpp
+  console.cpp
+  audio.cpp
+  Generating Code...
+  GamePad.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\GamePad.exe
+  GamePad.vcxproj -> S:\KPU\4-Summer\Dirext2D\DirectX2D\Debug\GamePad.pdb (Partial PDB)
